@@ -1,8 +1,10 @@
 import express , { Request, Response, json }  from "express"
 import httpStatus from "http-status";
+import sillyCatRouter from "./routers/sillycats-routes";
 
 const app = express()
 app.use(json())
+app.use(sillyCatRouter)
 app.get("/health", (req: Request, res: Response) => {
     res.sendStatus(httpStatus.OK)
 })
