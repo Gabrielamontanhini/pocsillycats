@@ -1,11 +1,11 @@
 import { Router } from "express";
-import sillyCatsControllers from "../controllers/sillycats-controllers";
+import { createSillyCat, deleteSillyCat, editSilliness, getSillyCats } from "../controllers/sillycats-controllers";
 
 const sillyCatRouter = Router()
 
-sillyCatRouter.get("/sillycat", sillyCatsControllers.getSillyCats)
-sillyCatRouter.post("/sillycat", sillyCatsControllers.createSillyCat)
-sillyCatRouter.delete("/sillycat/:id", sillyCatsControllers.deleteSillyCat)
-sillyCatRouter.patch("/sillycat/:id", sillyCatsControllers.editSilliness)
+sillyCatRouter.get("/sillycat", getSillyCats)
+sillyCatRouter.post("/sillycat", createSillyCat)
+sillyCatRouter.delete("/sillycat/:id", deleteSillyCat)
+sillyCatRouter.patch("/sillycat/:id", editSilliness)
 
 export default sillyCatRouter

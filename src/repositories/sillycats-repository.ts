@@ -12,6 +12,7 @@ export async function getCats(){
     return result
 }
 export async function deleteThisCat(id:number){
+   
     const result = await db.query(`DELETE FROM sillycats WHERE id = $1;`, [id])
     return result
 }

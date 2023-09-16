@@ -6,10 +6,13 @@ return postSillyCat(catName)
 function get() {
 return getCats()
 }
-function  deleteCat(id: number){
-return deleteThisCat(id)
+async function deleteCat(id: number){
+const result = await deleteThisCat(id)
+return result 
 }
 function edit(iq: number, id: number) {
 return editSilly(iq, id)
 }
 const sillyServices = { create, get, deleteCat, edit }
+
+export default sillyServices
